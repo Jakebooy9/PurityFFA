@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="PurityMCFFA:jar">
+    <output-path>$PROJECT_DIR$/../../plugins</output-path>
+    <root id="archive" name="PurityMCFFA.jar">
+      <element id="module-output" name="PurityMCFFA" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/slf4j/slf4j-simple/1.7.10/slf4j-simple-1.7.10.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.16/slf4j-api-1.7.16.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/zaxxer/HikariCP/2.4.4/HikariCP-2.4.4.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

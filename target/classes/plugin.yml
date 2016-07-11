@@ -1,0 +1,27 @@
+name: PurityMCFFA
+version: 2.1
+main: me.wolfmage1.puritymcffa.FFA
+description: Free For All
+
+commands:
+    stats:
+        description: "Retrieve the stats of either a player or the sender"
+        aliases: [records]
+    resetstats:
+        description: "Reset the statistics of a player"
+    setspawn:
+        description: "Set a spawn location for the random respawn"
+    kit:
+        description: "Get the specified kit"
+    savekit:
+        description: "Save your current inventory into a kit"
+    saveinventory:
+        description: "Save the players inventory"
+        aliases: [save]
+    fix:
+        description: "Fix a players position"
+    debug:
+        description: "Start server debugging"
+    leaderboard:
+        description: "Display the top 10 players ordered by points"
+        aliases: [top]
