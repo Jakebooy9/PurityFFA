@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="PurityFFA:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/PurityFFA_jar</output-path>
+  <artifact type="jar" build-on-make="true" name="PurityFFA:jar">
+    <output-path>$PROJECT_DIR$/../../plugins</output-path>
     <root id="archive" name="PurityFFA.jar">
       <element id="module-output" name="PurityFFA" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/zaxxer/HikariCP/2.4.6/HikariCP-2.4.6.jar" path-in-jar="/" />
