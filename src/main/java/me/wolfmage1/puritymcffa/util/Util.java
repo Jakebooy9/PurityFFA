@@ -11,6 +11,14 @@ import java.util.Map;
 import java.util.Random;
 import java.util.stream.Collectors;
 
+/*******************************************************************************
+ * Copyright MartinItsLinda (c) 2016. All Rights Reserved.
+ * Any code contained within this document, and any associated API's with similar branding
+ * are the sole property of MartinItsLinda. Distribution, reproduction, taking snippets or
+ * claiming any contents as your own will break the terms of the liscense and void any
+ * agreements with you, the third party.
+ ******************************************************************************/
+
 public class Util {
 
     public static double format(double round, int places) {

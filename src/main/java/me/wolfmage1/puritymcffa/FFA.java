@@ -33,6 +33,14 @@ import static me.wolfmage1.puritymcffa.util.InventoryToBase64.fromBase64;
 import static me.wolfmage1.puritymcffa.util.InventoryToBase64.toBase64;
 import static me.wolfmage1.puritymcffa.util.Util.toItemStack;
 
+/*******************************************************************************
+ * Copyright MartinItsLinda (c) 2016. All Rights Reserved.
+ * Any code contained within this document, and any associated API's with similar branding
+ * are the sole property of MartinItsLinda. Distribution, reproduction, taking snippets or
+ * claiming any contents as your own will break the terms of the liscense and void any
+ * agreements with you, the third party.
+ ******************************************************************************/
+
 public class FFA extends JavaPlugin {
 
     private static FFA instance;
