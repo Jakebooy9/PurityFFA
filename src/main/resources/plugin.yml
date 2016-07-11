@@ -1,6 +1,6 @@
 name: PurityMCFFA
 version: 2.1
-main: com.puritymc.purityffaa.PurityFFA
+main: com.puritymc.purityffa.PurityFFA
 description: Free For All
 
 commands:
