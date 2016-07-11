@@ -1,19 +1,4 @@
-/*
-* This file is part of PurityMCFFA
-*
-* PurityMCFFA is free software: you can redistribute it and/or modify
-* it under the terms of the GNU General Public License as published by
-* the Free Software Foundation, either version 3 of the License, or
-* (at your option) any later version.
-*
-* PurityMCFFA is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-* GNU General Public License for more details.
-*
-* You should have received a copy of the GNU General Public License
-* along with PurityMCFFA. If not, see <http://www.gnu.org/licenses/>
-*/
+
 package me.wolfmage1.puritymcffa.commands;
 
 import me.wolfmage1.puritymcffa.FFA;
@@ -29,6 +14,14 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import java.util.UUID;
+
+/*******************************************************************************
+ * Copyright MartinItsLinda (c) 2016. All Rights Reserved.
+ * Any code contained within this document, and any associated API's with similar branding
+ * are the sole property of MartinItsLinda. Distribution, reproduction, taking snippets or
+ * claiming any contents as your own will break the terms of the liscense and void any
+ * agreements with you, the third party.
+ ******************************************************************************/
 
 public class StatsCommand implements CommandExecutor {
 
