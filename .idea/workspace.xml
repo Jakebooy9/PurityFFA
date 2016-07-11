@@ -2,73 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98916fa4-9421-49ce-8119-5f4f4a74ebad" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/PurityMCFFA_jar.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/wolfmage1/puritymcffa/FFA.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/wolfmage1/puritymcffa/commands/DebugCommand.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/wolfmage1/puritymcffa/commands/FixCommand.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/wolfmage1/puritymcffa/commands/KitCommand.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/wolfmage1/puritymcffa/commands/LeaderboardCommand.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/wolfmage1/puritymcffa/commands/ResetStatsCommand.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/wolfmage1/puritymcffa/commands/SaveInventoryCommand.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/wolfmage1/puritymcffa/commands/SaveKitCommand.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/wolfmage1/puritymcffa/commands/SetSpawnCommand.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/wolfmage1/puritymcffa/commands/StatsCommand.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/wolfmage1/puritymcffa/kit/Kit.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/wolfmage1/puritymcffa/listener/ChatEvent.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/wolfmage1/puritymcffa/listener/DeathEvent.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/wolfmage1/puritymcffa/listener/GeneralListeners.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/wolfmage1/puritymcffa/player/FFAPlayer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/wolfmage1/puritymcffa/player/PlayerManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/wolfmage1/puritymcffa/sql/ConnectionPool.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/wolfmage1/puritymcffa/util/Config.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/wolfmage1/puritymcffa/util/InventoryToBase64.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/wolfmage1/puritymcffa/util/Message.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/wolfmage1/puritymcffa/util/Util.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/net/puritymc/purityffa/PurityFFA.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/net/puritymc/purityffa/commands/DebugCommand.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/net/puritymc/purityffa/commands/FixCommand.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/net/puritymc/purityffa/commands/KitCommand.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/net/puritymc/purityffa/commands/LeaderboardCommand.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/net/puritymc/purityffa/commands/ResetStatsCommand.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/net/puritymc/purityffa/commands/SaveInventoryCommand.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/net/puritymc/purityffa/commands/SaveKitCommand.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/net/puritymc/purityffa/commands/SetSpawnCommand.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/net/puritymc/purityffa/commands/StatsCommand.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/net/puritymc/purityffa/kit/Kit.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/net/puritymc/purityffa/listener/ChatEvent.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/net/puritymc/purityffa/listener/DeathEvent.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/net/puritymc/purityffa/listener/GeneralListeners.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/net/puritymc/purityffa/player/FFAPlayer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/net/puritymc/purityffa/player/PlayerManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/net/puritymc/purityffa/sql/ConnectionPool.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/net/puritymc/purityffa/util/Config.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/net/puritymc/purityffa/util/InventoryToBase64.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/net/puritymc/purityffa/util/Message.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/net/puritymc/purityffa/util/Util.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/FFA.class" afterPath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/FFA.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/commands/DebugCommand.class" afterPath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/commands/DebugCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/commands/FixCommand.class" afterPath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/commands/FixCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/commands/KitCommand.class" afterPath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/commands/KitCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/commands/LeaderboardCommand.class" afterPath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/commands/LeaderboardCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/commands/ResetStatsCommand.class" afterPath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/commands/ResetStatsCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/commands/SaveInventoryCommand.class" afterPath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/commands/SaveInventoryCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/commands/SaveKitCommand.class" afterPath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/commands/SaveKitCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/commands/SetSpawnCommand.class" afterPath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/commands/SetSpawnCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/commands/StatsCommand.class" afterPath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/commands/StatsCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/kit/Kit.class" afterPath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/kit/Kit.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/listener/ChatEvent.class" afterPath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/listener/ChatEvent.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/listener/DeathEvent.class" afterPath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/listener/DeathEvent.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/listener/GeneralListeners.class" afterPath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/listener/GeneralListeners.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/player/FFAPlayer.class" afterPath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/player/FFAPlayer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/player/PlayerManager.class" afterPath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/player/PlayerManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/sql/ConnectionPool.class" afterPath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/sql/ConnectionPool.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/util/Config.class" afterPath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/util/Config.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/util/InventoryToBase64.class" afterPath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/util/InventoryToBase64.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/util/Message.class" afterPath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/util/Message.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/util/Util.class" afterPath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/util/Util.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/PurityFFA_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/PurityFFA_jar.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_2_4_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_simple_1_7_10.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/FFA.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/commands/DebugCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/commands/FixCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/commands/KitCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/commands/LeaderboardCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/commands/ResetStatsCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/commands/SaveInventoryCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/commands/SaveKitCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/commands/SetSpawnCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/commands/StatsCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/kit/Kit.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/listener/ChatEvent.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/listener/DeathEvent.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/listener/GeneralListeners.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/player/FFAPlayer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/player/PlayerManager.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/sql/ConnectionPool.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/util/Config.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/util/InventoryToBase64.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/util/Message.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/me/wolfmage1/puritymcffa/util/Util.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PurityFFA.iml" afterPath="$PROJECT_DIR$/PurityFFA.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/plugin.yml" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" />
     </list>
     <ignored path="PurityFFA.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -94,8 +55,8 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+            <state relative-caret-position="335">
+              <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -104,8 +65,8 @@
       <file leaf-file-name="plugin.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/plugin.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+            <state relative-caret-position="300">
+              <caret line="12" column="66" selection-start-line="12" selection-start-column="66" selection-end-line="12" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -117,9 +78,14 @@
             <state relative-caret-position="2000">
               <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#9641#9642#0" expanded="true" />
-                <element signature="e#9686#9687#0" expanded="true" />
+                <element signature="e#7484#7485#0" expanded="false" />
+                <element signature="e#7511#7512#0" expanded="false" />
+                <element signature="e#7552#7553#0" expanded="false" />
+                <element signature="e#7585#7586#0" expanded="false" />
+                <element signature="e#7618#7619#0" expanded="false" />
+                <element signature="e#7645#7646#0" expanded="false" />
+                <element signature="e#9552#9553#0" expanded="false" />
+                <element signature="e#9583#9584#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -130,7 +96,11 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1004#1005#0" expanded="false" />
+                <element signature="e#1033#1034#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -140,7 +110,11 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="e#1042#1043#0" expanded="false" />
+                <element signature="e#1078#1079#0" expanded="false" />
+                <marker date="1468269470138" expanded="false" signature="143:379" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -158,12 +132,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/plugin.yml" />
         <option value="$PROJECT_DIR$/src/main/java/net/puritymc/purityffaa/PurityFFA.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/puritymc/purityffa/sql/ConnectionPool.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/puritymc/purityffa/commands/DebugCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/puritymc/purityffa/PurityFFA.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/PurityFFA.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/plugin.yml" />
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
@@ -285,6 +259,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="purityffa" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -555,11 +533,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="97" y="94" width="1611" height="793" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -568,7 +546,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30238557" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30238557" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32864866" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -624,9 +602,14 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#9641#9642#0" expanded="true" />
-            <element signature="e#9686#9687#0" expanded="true" />
+            <element signature="e#7484#7485#0" expanded="false" />
+            <element signature="e#7511#7512#0" expanded="false" />
+            <element signature="e#7552#7553#0" expanded="false" />
+            <element signature="e#7585#7586#0" expanded="false" />
+            <element signature="e#7618#7619#0" expanded="false" />
+            <element signature="e#7645#7646#0" expanded="false" />
+            <element signature="e#9552#9553#0" expanded="false" />
+            <element signature="e#9583#9584#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -638,19 +621,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/plugin.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/sql/ConnectionPool.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1004#1005#0" expanded="false" />
+            <element signature="e#1033#1034#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -658,7 +637,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#1042#1043#0" expanded="false" />
+            <element signature="e#1078#1079#0" expanded="false" />
+            <marker date="1468269470138" expanded="false" signature="143:379" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -667,17 +650,30 @@
         <state relative-caret-position="2000">
           <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#9641#9642#0" expanded="true" />
-            <element signature="e#9686#9687#0" expanded="true" />
+            <element signature="e#7484#7485#0" expanded="false" />
+            <element signature="e#7511#7512#0" expanded="false" />
+            <element signature="e#7552#7553#0" expanded="false" />
+            <element signature="e#7585#7586#0" expanded="false" />
+            <element signature="e#7618#7619#0" expanded="false" />
+            <element signature="e#7645#7646#0" expanded="false" />
+            <element signature="e#9552#9553#0" expanded="false" />
+            <element signature="e#9583#9584#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/plugin.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="66" selection-start-line="12" selection-start-column="66" selection-end-line="12" selection-end-column="66" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+        <state relative-caret-position="335">
+          <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
           <folding />
         </state>
       </provider>
