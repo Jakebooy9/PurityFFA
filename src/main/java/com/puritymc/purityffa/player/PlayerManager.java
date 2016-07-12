@@ -30,17 +30,16 @@ public class PlayerManager {
         return players;
     }
 
-    public static FFAPlayer getPlayer(final Player pl) {
+    public static FFAPlayer getPlayer(Player pl) {
         return getPlayer(pl.getUniqueId());
     }
 
-    public static FFAPlayer getPlayer(final UUID uuid) {
+    public static FFAPlayer getPlayer(UUID uuid) {
         if (players.get(uuid) != null) {
             return players.get(uuid);
         }
 
-        Player pl = Bukkit.getPlayer(uuid);
-        FFAPlayer player = new FFAPlayer(pl);
+        FFAPlayer player = new FFAPlayer(Bukkit.getPlayer(uuid));
 
         Bukkit.getScheduler().runTaskAsynchronously(plugin, ()-> {
 
@@ -89,7 +88,7 @@ public class PlayerManager {
                     statement = connection.prepareStatement(query);
 
                     statement.setString(1, uuid.toString());
-                    statement.setString(2, pl.getName());
+                    statement.setString(2, player.getBukkitPlayer().getName());
 
                     statement.executeUpdate();
                 }

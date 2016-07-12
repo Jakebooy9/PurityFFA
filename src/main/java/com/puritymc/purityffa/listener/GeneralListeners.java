@@ -5,6 +5,8 @@ import com.puritymc.purityffa.PurityFFA;
 import com.puritymc.purityffa.player.FFAPlayer;
 import com.puritymc.purityffa.player.PlayerManager;
 
+import com.puritymc.purityffa.util.Message;
+import com.puritymc.purityffa.util.Util;
 import org.bukkit.*;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.*;
@@ -18,6 +20,8 @@ import org.bukkit.event.entity.*;
 import org.bukkit.event.player.*;
 import org.bukkit.event.weather.WeatherChangeEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Team;
 
@@ -97,11 +101,79 @@ public class GeneralListeners implements Listener {
         Player pl = player.getBukkitPlayer();
 
         if (player.getTagger() != null) {
-            FFAPlayer tagger = PlayerManager.getPlayer(player.getTagger());
 
-            pl.damage(pl.getMaxHealth(), tagger.getBukkitPlayer());
+            FFAPlayer killer = PlayerManager.getPlayer(player.getTagger());
 
-            tagger.setTagger(null);
+            Player klr = killer.getBukkitPlayer();
+
+            int gained = player.getPoints() < 100 ? 5 :
+                    (int) Math.round(player.getPoints() * 0.5);
+
+            int lost = player.getPoints() <= 5 ? player.getPoints() : gained;
+
+            if (player.getKillStreak()>5) {
+                Message.get("kill_streak_ended")
+                        .replace("%player%", player.getBukkitPlayer().getName())
+                        .replace("%streak%", player.getKillStreak())
+                        .sendTo(Bukkit.getOnlinePlayers());
+            }
+
+            player.setPoints(player.getPoints() - lost * 2);
+            player.setDeaths(player.getDeaths() + 1);
+            player.setKillStreak(0);
+            player.setTagger(null);
+
+            killer.setPoints(killer.getPoints() + gained * 2);
+            killer.setKills(killer.getKills() + 1);
+            killer.setKillStreak(killer.getKillStreak() + 1);
+            killer.setTagger(null);
+            killer.setLastKilled(pl.getUniqueId());
+
+            if (killer.getKillStreak() > killer.getHighestKillStreak())
+                killer.setHighestKillStreak(killer.getKillStreak());
+
+
+            klr.setLevel(killer.getKillStreak());
+
+            klr.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 60, 4));
+
+            if (!(klr.getInventory().contains(Material.FLINT_AND_STEEL))) klr.getInventory()
+                    .addItem(new ItemStack(Material.FLINT_AND_STEEL));
+
+
+            klr.getInventory().addItem(new ItemStack(Material.ARROW));
+
+            pl.getScoreboard().getObjective(DisplaySlot.BELOW_NAME)
+                    .getScore(pl)
+                    .setScore(0);
+
+            klr.getScoreboard().getObjective(DisplaySlot.BELOW_NAME)
+                    .getScore(klr)
+                    .setScore(killer.getKillStreak());
+
+            Util.spawnFirework(klr.getLocation());
+
+            Message.get("death_message")
+                    .replace("%health%", Util.format(killer.getBukkitPlayer().getHealth() / 2, 1))
+                    .replace("%maxHealth%", Util.format(killer.getBukkitPlayer().getMaxHealth() / 2, 1))
+                    .replace("%killer%", klr.getName())
+                    .replace("%lost%", lost)
+                    .replace("%total%", player.getPoints())
+                    .sendTo(pl);
+
+            Message.get("killed_message")
+                    .replace("%health%", Util.format(killer.getBukkitPlayer().getHealth() / 2, 1))
+                    .replace("%maxHealth%", Util.format(killer.getBukkitPlayer().getMaxHealth() / 2, 1))
+                    .replace("%killed%", pl.getName())
+                    .replace("%gained%", gained)
+                    .replace("%total%", killer.getPoints())
+                    .sendTo(klr);
+
+            Bukkit.getScheduler().runTaskAsynchronously(plugin, ()-> {
+                player.update();
+                if (!(killer.update())) Message.get("failed_to_update_stats").sendTo(killer.getBukkitPlayer());
+            });
+
         }
 
         player.setTagger(null);

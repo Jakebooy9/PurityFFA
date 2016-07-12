@@ -85,7 +85,7 @@ public class FFAPlayer {
     }
 
     public boolean isStreaking() {
-        return getKillStreak() % 5 == 0;
+        return killStreak > 0 && killStreak % 5 == 0;
     }
 
     public int getKillStreak() {
@@ -157,14 +157,10 @@ public class FFAPlayer {
 
         StringBuilder query = new StringBuilder();
 
-        query.append("UPDATE ffa_stats SET points = ?, kills = ?, deaths = ?, highestKillStreak = ?");
+        query.append("UPDATE ffa_stats SET points = ?, kills = ?, deaths = ?, highestKillStreak = ? ");
 
         if (contents != null && contents.length > 0) {
-            try {
-                query.append(", inventoryContents = '").append(fromBase64(toBase64(kit, contents))).append("' ");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            query.append(", inventoryContents = '").append(toBase64(kit, contents)).append("' ");
         }
 
         query.append("WHERE unique_id = ?");
@@ -213,10 +209,9 @@ public class FFAPlayer {
              PreparedStatement stmt = connection.prepareStatement("SELECT *, FIND_IN_SET( `kills`, " +
                      "(SELECT GROUP_CONCAT( `kills` ORDER BY `kills` DESC ) " +
                      "FROM `ffa_stats` )) AS rank FROM ffa_stats " +
-                     "WHERE `unique_id`='" + player + "';");
+                     "WHERE `unique_id`='" + player.getUniqueId() + "';");
              ResultSet set = stmt.executeQuery()) {
-
-            if(set.next()) id = set.getInt("rank");
+            if (set.next()) rank = set.getInt("rank");
         } catch (SQLException e) {
             e.printStackTrace();
         }

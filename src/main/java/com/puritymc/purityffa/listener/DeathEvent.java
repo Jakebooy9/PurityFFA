@@ -38,6 +38,15 @@ public class DeathEvent implements Listener {
     @EventHandler
     public void onPlayerDeath(final PlayerDeathEvent event) {
 
+        event.setKeepInventory(false);
+        event.setKeepLevel(false);
+        event.setNewLevel(0);
+        event.setNewExp(0);
+        event.setNewTotalExp(0);
+        event.setDroppedExp(0);
+        event.setDeathMessage(null);
+        event.getDrops().clear();
+
         if (event.getEntity().getKiller() != null) {
 
             FFAPlayer killed = PlayerManager.getPlayer(event.getEntity());
@@ -46,20 +55,22 @@ public class DeathEvent implements Listener {
             Player kld = killed.getBukkitPlayer();
             Player klr = killer.getBukkitPlayer();
 
-            int killsOnPlayer = kills.putIfAbsent(klr.getUniqueId(), 1);
+            kills.putIfAbsent(klr.getUniqueId(), 1);
 
-            int gained = killed.getPoints() <= 5 || killed.getPoints() < 100 ? 5 :
-                    (int) Math.round(killed.getPoints() * .5);
+            int killsOnPlayer = kills.get(klr.getUniqueId());
+
+            int gained = killed.getPoints() < 100 ? 5 :
+                    (int) Math.round(killed.getPoints() * 0.5);
 
             int lost = killed.getPoints() <= 5 ? killed.getPoints() : gained;
 
             if (killer.getLastKilled() != null && killer.getLastKilled().equals(kld.getUniqueId())) {
-                if (killsOnPlayer >= 3) gained = lost = 0;
+                if (killsOnPlayer == 3) gained = lost = 0;
                 else kills.put(klr.getUniqueId(), killsOnPlayer + 1);
             } else kills.put(klr.getUniqueId(), 1);
 
 
-            if (killed.isStreaking()) {
+            if (killed.getKillStreak()>5) {
                 Message.get("kill_streak_ended")
                         .replace("%player%", kld.getName())
                         .replace("%streak%", killed.getKillStreak())
@@ -119,18 +130,10 @@ public class DeathEvent implements Listener {
 
             Bukkit.getScheduler().runTaskAsynchronously(plugin, ()-> {
                 if (!(killed.update())) Message.get("failed_to_update_stats").sendTo(killed.getBukkitPlayer());
-                if (!(killer.update())) Message.get("failed_to_update_stats").sendTo(killed.getBukkitPlayer());
+                if (!(killer.update())) Message.get("failed_to_update_stats").sendTo(killer.getBukkitPlayer());
             });
 
         }
-
-        event.setKeepInventory(false);
-        event.setKeepLevel(false);
-        event.setNewLevel(0);
-        event.setNewExp(0);
-        event.setNewTotalExp(0);
-        event.setDroppedExp(0);
-        event.setDeathMessage(null);
 
     }
 

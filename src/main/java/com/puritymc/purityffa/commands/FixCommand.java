@@ -27,32 +27,19 @@ public class FixCommand implements CommandExecutor {
                 return true;
             }
             if (args.length < 1) {
-                Player target = (Player) sender; //To lazy to change variable names
-
-                Location location = target.getLocation();
-
-                location.setX(location.getBlockX());
-                location.setY(location.getBlockY());
-                location.setZ(location.getBlockZ());
-
-                target.teleport(location);
-
+                Player target = (Player) sender; //To lazy to change variable name
+                target.teleport(target.getLocation().add(0, 0.1D, 0));
                 Message.get("player_fixed").replace("%player%", target.getName()).sendTo(sender);
                 return true;
             }
             Player target = Bukkit.getPlayer(args[0]);
+
             if (target == null) {
                 Message.get("player_not_found").replace("%player%", args[0]);
                 return true;
             }
 
-            Location location = target.getLocation();
-
-            location.setX(location.getBlockX());
-            location.setY(location.getBlockY());
-            location.setZ(location.getBlockZ());
-
-            target.teleport(location);
+            target.teleport(target.getLocation().add(0, 0.1D, 0));
 
             Message.get("player_fixed").replace("%player%", target.getName()).sendTo(sender);
         }
