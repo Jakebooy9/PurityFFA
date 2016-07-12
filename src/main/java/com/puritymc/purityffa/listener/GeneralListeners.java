@@ -143,10 +143,6 @@ public class GeneralListeners implements Listener {
 
             klr.getInventory().addItem(new ItemStack(Material.ARROW));
 
-            pl.getScoreboard().getObjective(DisplaySlot.BELOW_NAME)
-                    .getScore(pl)
-                    .setScore(0);
-
             klr.getScoreboard().getObjective(DisplaySlot.BELOW_NAME)
                     .getScore(klr)
                     .setScore(killer.getKillStreak());

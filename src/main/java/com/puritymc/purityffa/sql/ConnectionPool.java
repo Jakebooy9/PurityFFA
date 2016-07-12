@@ -23,6 +23,8 @@ public class ConnectionPool {
         source.setJdbcUrl(url);
         source.setUsername(user);
         source.setPassword(password);
+        source.setMaximumPoolSize(50);
+        source.setLeakDetectionThreshold(5000);
     }
 
     public HikariDataSource getSource() {

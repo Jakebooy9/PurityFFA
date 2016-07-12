@@ -1,25 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98916fa4-9421-49ce-8119-5f4f4a74ebad" name="Default" comment="Removed dependency.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_jdk14_1_7_10.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_simple_1_7_21.xml" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_2_4_6.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_2_4_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/puritymc/purityffa/commands/FixCommand.class" afterPath="$PROJECT_DIR$/target/classes/com/puritymc/purityffa/commands/FixCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/puritymc/purityffa/listener/DeathEvent.class" afterPath="$PROJECT_DIR$/target/classes/com/puritymc/purityffa/listener/DeathEvent.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/puritymc/purityffa/listener/GeneralListeners.class" afterPath="$PROJECT_DIR$/target/classes/com/puritymc/purityffa/listener/GeneralListeners.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/puritymc/purityffa/player/FFAPlayer.class" afterPath="$PROJECT_DIR$/target/classes/com/puritymc/purityffa/player/FFAPlayer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/puritymc/purityffa/player/PlayerManager.class" afterPath="$PROJECT_DIR$/target/classes/com/puritymc/purityffa/player/PlayerManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/PurityFFA_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/PurityFFA_jar.xml" />
+    <list default="true" id="98916fa4-9421-49ce-8119-5f4f4a74ebad" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PurityFFA.iml" afterPath="$PROJECT_DIR$/PurityFFA.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/commands/FixCommand.java" afterPath="$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/commands/FixCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/PurityFFA.java" afterPath="$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/PurityFFA.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/listener/DeathEvent.java" afterPath="$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/listener/DeathEvent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/listener/GeneralListeners.java" afterPath="$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/listener/GeneralListeners.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/player/FFAPlayer.java" afterPath="$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/player/FFAPlayer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/player/PlayerManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/player/PlayerManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/sql/ConnectionPool.java" afterPath="$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/sql/ConnectionPool.java" />
     </list>
     <ignored path="PurityFFA.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,18 +32,18 @@
       <file leaf-file-name="FFAPlayer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/player/FFAPlayer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2450">
-              <caret line="176" column="0" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
+            <state relative-caret-position="425">
+              <caret line="211" column="23" selection-start-line="211" selection-start-column="23" selection-end-line="211" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GeneralListeners.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GeneralListeners.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/listener/GeneralListeners.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="800">
-              <caret line="151" column="36" selection-start-line="151" selection-start-column="36" selection-end-line="151" selection-end-column="36" />
+            <state relative-caret-position="252">
+              <caret line="231" column="55" selection-start-line="231" selection-start-column="54" selection-end-line="231" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -67,7 +54,11 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
               <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#952#953#0" expanded="false" />
+                <element signature="e#988#989#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -77,6 +68,18 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1075">
               <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConnectionPool.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/sql/ConnectionPool.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="537">
+              <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -87,7 +90,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="725">
               <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -95,8 +100,18 @@
       <file leaf-file-name="DeathEvent.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/listener/DeathEvent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1275">
-              <caret line="69" column="51" selection-start-line="69" selection-start-column="51" selection-end-line="69" selection-end-column="51" />
+            <state relative-caret-position="450">
+              <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KitCommand.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/commands/KitCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="65" column="21" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -107,7 +122,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1500">
               <caret line="75" column="29" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1128#1129#0" expanded="false" />
+                <element signature="e#1158#1159#0" expanded="false" />
+                <element signature="e#1210#1211#0" expanded="false" />
+                <element signature="e#1260#1261#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -115,8 +136,8 @@
       <file leaf-file-name="PurityFFA.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/PurityFFA.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
+            <state relative-caret-position="4682">
+              <caret line="255" column="27" selection-start-line="255" selection-start-column="27" selection-end-line="255" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -141,14 +162,15 @@
         <option value="$PROJECT_DIR$/src/main/java/net/puritymc/purityffa/sql/ConnectionPool.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/puritymc/purityffa/commands/DebugCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/puritymc/purityffa/PurityFFA.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/PurityFFA.java" />
         <option value="$PROJECT_DIR$/src/main/resources/plugin.yml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/commands/FixCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/player/PlayerManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/listener/DeathEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/player/FFAPlayer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/listener/DeathEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/listener/GeneralListeners.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/PurityFFA.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/sql/ConnectionPool.java" />
       </list>
     </option>
   </component>
@@ -304,6 +326,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="sql" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PurityFFA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PurityFFA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="purityffa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="player" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -376,7 +428,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15208878" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="copyright.profiles" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$USER_HOME$/AppData/Roaming/Skype/My Skype Received Files/PurityFix" />
   </component>
@@ -644,7 +696,14 @@
       <option name="project" value="LOCAL" />
       <updated>1468322433462</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added anti combat logging, fixed HikariCP, improved some code, still stuff to do but... need to focus on duels.">
+      <created>1468341058865</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1468341058865</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -653,7 +712,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11891892" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11796537" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -691,7 +750,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="I forgot to include SLF4J in dependencies, HikariCP uses it for Logging." />
     <MESSAGE value="Removed dependency." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed dependency." />
+    <MESSAGE value="Added anti combat logging, fixed HikariCP, improved some code, still stuff to do but... need to focus on duels." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added anti combat logging, fixed HikariCP, improved some code, still stuff to do but... need to focus on duels." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -722,7 +782,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#952#953#0" expanded="false" />
+            <element signature="e#988#989#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -730,7 +794,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1075">
           <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -738,7 +804,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="725">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -754,7 +822,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1500">
           <caret line="75" column="29" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1128#1129#0" expanded="false" />
+            <element signature="e#1158#1159#0" expanded="false" />
+            <element signature="e#1210#1211#0" expanded="false" />
+            <element signature="e#1260#1261#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -780,6 +854,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="22" column="60" selection-start-line="22" selection-start-column="60" selection-end-line="22" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#897#898#0" expanded="false" />
+            <element signature="e#929#930#0" expanded="false" />
+            <element signature="e#964#965#0" expanded="false" />
+            <element signature="e#993#994#0" expanded="false" />
+            <element signature="e#1039#1040#0" expanded="false" />
+            <element signature="e#1075#1076#0" expanded="false" />
+            <element signature="e#1114#1115#0" expanded="false" />
+            <element signature="e#1147#1148#0" expanded="false" />
+            <element signature="e#1201#1202#0" expanded="false" />
+            <element signature="e#1245#1246#0" expanded="false" />
+            <element signature="e#1282#1283#0" expanded="false" />
+            <element signature="e#1313#1314#0" expanded="false" />
+            <element signature="e#1363#1364#0" expanded="false" />
+            <element signature="e#1403#1404#0" expanded="false" />
+            <element signature="e#1437#1438#0" expanded="false" />
+            <element signature="e#1465#1466#0" expanded="false" />
+            <element signature="e#1509#1510#0" expanded="false" />
+            <element signature="e#1543#1544#0" expanded="false" />
+            <element signature="e#1596#1597#0" expanded="false" />
+            <element signature="e#1631#1632#0" expanded="false" />
+            <element signature="e#1701#1702#0" expanded="false" />
+            <element signature="e#1749#1750#0" expanded="false" />
+            <element signature="e#1780#1781#0" expanded="false" />
+            <element signature="e#1807#1808#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -804,6 +905,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1091#1092#0" expanded="false" />
+            <element signature="e#1120#1121#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -849,13 +955,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/sql/ConnectionPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/commands/DebugCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -877,6 +976,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="22" column="60" selection-start-line="22" selection-start-column="60" selection-end-line="22" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#897#898#0" expanded="false" />
+            <element signature="e#929#930#0" expanded="false" />
+            <element signature="e#964#965#0" expanded="false" />
+            <element signature="e#993#994#0" expanded="false" />
+            <element signature="e#1039#1040#0" expanded="false" />
+            <element signature="e#1075#1076#0" expanded="false" />
+            <element signature="e#1114#1115#0" expanded="false" />
+            <element signature="e#1147#1148#0" expanded="false" />
+            <element signature="e#1201#1202#0" expanded="false" />
+            <element signature="e#1245#1246#0" expanded="false" />
+            <element signature="e#1282#1283#0" expanded="false" />
+            <element signature="e#1313#1314#0" expanded="false" />
+            <element signature="e#1363#1364#0" expanded="false" />
+            <element signature="e#1403#1404#0" expanded="false" />
+            <element signature="e#1437#1438#0" expanded="false" />
+            <element signature="e#1465#1466#0" expanded="false" />
+            <element signature="e#1509#1510#0" expanded="false" />
+            <element signature="e#1543#1544#0" expanded="false" />
+            <element signature="e#1596#1597#0" expanded="false" />
+            <element signature="e#1631#1632#0" expanded="false" />
+            <element signature="e#1701#1702#0" expanded="false" />
+            <element signature="e#1749#1750#0" expanded="false" />
+            <element signature="e#1780#1781#0" expanded="false" />
+            <element signature="e#1807#1808#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -909,16 +1035,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/PurityFFA.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/util/Map.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="673">
@@ -931,7 +1047,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="725">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -939,7 +1057,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#952#953#0" expanded="false" />
+            <element signature="e#988#989#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -947,7 +1069,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1500">
           <caret line="75" column="29" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1128#1129#0" expanded="false" />
+            <element signature="e#1158#1159#0" expanded="false" />
+            <element signature="e#1210#1211#0" expanded="false" />
+            <element signature="e#1260#1261#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -955,7 +1083,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1075">
           <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -983,24 +1113,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/listener/DeathEvent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="69" column="51" selection-start-line="69" selection-start-column="51" selection-end-line="69" selection-end-column="51" />
+        <state relative-caret-position="450">
+          <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/commands/KitCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="65" column="21" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/PurityFFA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4682">
+          <caret line="255" column="27" selection-start-line="255" selection-start-column="27" selection-end-line="255" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/player/FFAPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2450">
-          <caret line="176" column="0" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
+        <state relative-caret-position="425">
+          <caret line="211" column="23" selection-start-line="211" selection-start-column="23" selection-end-line="211" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/listener/GeneralListeners.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="151" column="36" selection-start-line="151" selection-start-column="36" selection-end-line="151" selection-end-column="36" />
+        <state relative-caret-position="252">
+          <caret line="231" column="55" selection-start-line="231" selection-start-column="54" selection-end-line="231" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/puritymc/purityffa/sql/ConnectionPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="537">
+          <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
           <folding />
         </state>
       </provider>
@@ -1017,6 +1173,18 @@
               <list>
                 <option value="0.2" />
                 <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="Copyright.UI">
+        <settings>
+          <last-edited>MartinItsLinda - All Rights Reserved</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>

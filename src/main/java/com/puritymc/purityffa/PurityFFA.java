@@ -228,35 +228,32 @@ public class PurityFFA extends JavaPlugin {
         if (kit == null) return;
         if (player == null) return;
 
-        Bukkit.getScheduler().runTask(this, () -> {
+        Player pl = player.getBukkitPlayer();
+        PlayerInventory pi = pl.getInventory();
 
-            Player pl = player.getBukkitPlayer();
-            PlayerInventory pi = pl.getInventory();
+        pi.clear();
+        pi.setArmorContents(null);
+        pl.getActivePotionEffects().clear();
 
-            pi.clear();
-            pi.setArmorContents(null);
-            pl.getActivePotionEffects().clear();
-
-            if (kit.getHelmet() != null) pi.setHelmet(toItemStack(kit.getHelmet(), 1));
-            if (kit.getChestplate() != null) pi.setChestplate(toItemStack(kit.getChestplate(), 1));
-            if (kit.getLeggings() != null) pi.setLeggings(toItemStack(kit.getLeggings(), 1));
-            if (kit.getBoots() != null) pi.setBoots(toItemStack(kit.getBoots(), 1));
+        if (kit.getHelmet() != null) pi.setHelmet(toItemStack(kit.getHelmet(), 1));
+        if (kit.getChestplate() != null) pi.setChestplate(toItemStack(kit.getChestplate(), 1));
+        if (kit.getLeggings() != null) pi.setLeggings(toItemStack(kit.getLeggings(), 1));
+        if (kit.getBoots() != null) pi.setBoots(toItemStack(kit.getBoots(), 1));
 
 
-            ItemStack[] contents = toItemStack(kit.getSpecialItems()).toArray(new ItemStack[0]);
+        ItemStack[] contents = toItemStack(kit.getSpecialItems()).toArray(new ItemStack[0]);
 
-            if (player.getInventoryContents() != null && pl.hasPermission("ffa.saveinventory")) {
-                try {
-                    contents = fromBase64(toBase64(kit, player.getInventoryContents())).getContents();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+        if (player.getInventoryContents() != null && pl.hasPermission("ffa.saveinventory")) {
+            try {
+                contents = fromBase64(toBase64(kit, player.getInventoryContents())).getContents();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
+        }
 
-            pi.setContents(contents);
-            pl.updateInventory();
-            player.setKit(kit);
-        });
+        pi.setContents(contents);
+        pl.updateInventory();
+        player.setKit(kit);
     }
 
     public static PurityFFA getInstance() {

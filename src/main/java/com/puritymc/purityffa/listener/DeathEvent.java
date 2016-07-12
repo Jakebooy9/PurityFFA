@@ -60,7 +60,7 @@ public class DeathEvent implements Listener {
             int killsOnPlayer = kills.get(klr.getUniqueId());
 
             int gained = killed.getPoints() < 100 ? 5 :
-                    (int) Math.round(killed.getPoints() * 0.5);
+                    (int) Math.round(killed.getPoints() * 0.05);
 
             int lost = killed.getPoints() <= 5 ? killed.getPoints() : gained;
 
