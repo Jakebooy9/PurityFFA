@@ -243,12 +243,8 @@ public class PurityFFA extends JavaPlugin {
 
         ItemStack[] contents = toItemStack(kit.getSpecialItems()).toArray(new ItemStack[0]);
 
-        if (player.getInventoryContents() != null && pl.hasPermission("ffa.saveinventory")) {
-            try {
-                contents = fromBase64(toBase64(kit, player.getInventoryContents())).getContents();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        if (player.getInventoryContents() != null) {
+            contents = player.getInventoryContents();
         }
 
         pi.setContents(contents);
