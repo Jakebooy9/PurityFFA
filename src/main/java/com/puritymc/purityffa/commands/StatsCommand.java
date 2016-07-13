@@ -41,7 +41,7 @@ public class StatsCommand implements CommandExecutor {
                 }
 
                 Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
-                    FFAPlayer player = PlayerManager.getPlayer(((Player) sender));
+                    FFAPlayer player = PlayerManager.getPlayer(((Player) sender).getUniqueId());
                     String prefix = plugin.getConfig().getString("messages.prefix");
                     for (String s : plugin.getConfig().getStringList("messages.stats")) {
                         s = s.replace("%player%", sender.getName())
@@ -57,16 +57,14 @@ public class StatsCommand implements CommandExecutor {
                 });
             } else {
 
-                UUID uuid = Bukkit.getOfflinePlayer(args[0]).getUniqueId();
-
-                if (uuid == null) {
-                    Message.get("player_not_found")
-                            .sendTo(sender);
-                    return true;
-                }
-
                 Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
-                    FFAPlayer player = PlayerManager.getPlayer(uuid);
+                    FFAPlayer player = PlayerManager.getPlayer(args[0]);
+
+                    if (player == null) {
+                        Message.get("player_not_found").replace("%player%", args[0]).sendTo(sender);
+                        return;
+                    }
+
                     String prefix = Message.getString("prefix");
                     for (String s : plugin.getConfig().getStringList("messages.stats")) {
                         s = s.replace("%player%", args[0])

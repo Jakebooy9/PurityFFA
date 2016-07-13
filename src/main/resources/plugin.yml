@@ -25,3 +25,6 @@ commands:
     leaderboard:
         description: "Display the top 10 players ordered by points"
         aliases: [top]
+    spectate:
+        description: "Enter spectator mode"
+        aliases: [spec]

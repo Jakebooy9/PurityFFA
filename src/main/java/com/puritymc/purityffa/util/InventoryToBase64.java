@@ -32,6 +32,7 @@ public class InventoryToBase64 {
 
             // Write the size of the inventory
             dataOutput.writeInt(inventory.getSize());
+
             for(ItemStack item : inventory.getContents()) {
                 if (item == null) {
                     dataOutput.writeObject(null);

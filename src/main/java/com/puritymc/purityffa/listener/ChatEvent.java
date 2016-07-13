@@ -32,7 +32,7 @@ public class ChatEvent implements Listener {
         event.setFormat(Message.get("chat_format")
                 .replace("%points%", Integer.toString(PlayerManager.getPlayer(event.getPlayer()).getPoints()))
                 .replace("%name%", (prefix == null ? "" : prefix) + event.getPlayer().getName())
-                .replace("%message%", event.getMessage()).colorize());
+                .replace("%message%", event.getMessage().replace("%", "%%")).colorize());
     }
 
 }

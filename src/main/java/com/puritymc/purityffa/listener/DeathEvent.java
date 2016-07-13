@@ -70,7 +70,7 @@ public class DeathEvent implements Listener {
             } else kills.put(klr.getUniqueId(), 1);
 
 
-            if (killed.getKillStreak()>5) {
+            if (killed.getKillStreak()>=5) {
                 Message.get("kill_streak_ended")
                         .replace("%player%", kld.getName())
                         .replace("%streak%", killed.getKillStreak())
@@ -85,8 +85,8 @@ public class DeathEvent implements Listener {
             killer.setPoints(killer.getPoints() + gained);
             killer.setKills(killer.getKills() + 1);
             killer.setKillStreak(killer.getKillStreak() + 1);
-            killer.setTagger(null);
             killer.setLastKilled(kld.getUniqueId());
+            killer.setTagger(null);
 
             if (killer.getKillStreak() > killer.getHighestKillStreak())
                 killer.setHighestKillStreak(killer.getKillStreak());

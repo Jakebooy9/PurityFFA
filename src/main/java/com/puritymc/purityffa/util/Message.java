@@ -26,18 +26,16 @@ public class Message {
     }
 
     public Message replace(CharSequence oldChar, CharSequence newChar) {
-        message = message.replace(oldChar, newChar);
+        this.message = message.replace(oldChar, newChar);
         return this;
     }
 
     public Message replace(CharSequence oldChar, Integer newChar) {
-        message = message.replace(oldChar, Integer.toString(newChar));
-        return this;
+        return replace(oldChar, Integer.toString(newChar));
     }
 
     public Message replace(CharSequence oldChar, Double newChar) {
-        message = message.replace(oldChar, Double.toString(newChar));
-        return this;
+        return replace(oldChar, Double.toString(newChar));
     }
 
     public String colorize() {
@@ -58,7 +56,7 @@ public class Message {
     }
 
     public void sendTo(CommandSender sender) {
-        sender.sendMessage(getString("prefix") + " " + message);
+        sender.sendMessage(getString("prefix") + " " + toString());
     }
 
     public String toString() {
@@ -70,7 +68,7 @@ public class Message {
     }
 
     public static String getString(String key) {
-        return messages.get(key);
+        return get(key).toString();
     }
 
     public static void load(FileConfiguration config) {

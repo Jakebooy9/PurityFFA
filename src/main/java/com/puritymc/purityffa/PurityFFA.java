@@ -119,6 +119,7 @@ public class PurityFFA extends JavaPlugin {
         getCommand("debug").setExecutor(new DebugCommand(this));
         getCommand("saveinventory").setExecutor(new SaveInventoryCommand(this));
         getCommand("leaderboard").setExecutor(new LeaderboardCommand(this));
+        getCommand("spectate").setExecutor(new SpectateCommand(this));
 
         getServer().getPluginManager().registerEvents(new DeathEvent(), this);
         getServer().getPluginManager().registerEvents(new GeneralListeners(this), this);

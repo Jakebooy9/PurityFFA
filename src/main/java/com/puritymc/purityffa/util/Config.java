@@ -46,6 +46,9 @@ public class Config {
         cfg.put("messages.no_kit_equipped", "&cYou must have a kit equipped.");
         cfg.put("messages.kit_not_complete", "&cYour kit must be complete to use \"/saveinventory\".");
         cfg.put("messages.leaderboard_format", "&e%position%. %player%: %kills%");
+        cfg.put("messages.spectator_mode_enabled", "&aSpectator mode enabled.");
+        cfg.put("messages.no_spectator_currently_tagged", "&cCannot enable spectator mode whilst combat tagged.");
+        cfg.put("messages.spectator_mode_disabled", "&cSpectator mode disabled");
 
         cfg.put("ffa.default_kit", "KIT_NAME");
         cfg.put("ffa.mysql.user", "username");

@@ -80,7 +80,7 @@ public class GeneralListeners implements Listener {
 
         event.setJoinMessage(null);
 
-        getScheduler().runTaskAsynchronously(plugin, ()->{
+        getScheduler().runTaskAsynchronously(plugin, () -> {
             FFAPlayer player = PlayerManager.getPlayer(event.getPlayer());
 
             if (!(plugin.getSpawns().isEmpty())) {
@@ -93,15 +93,15 @@ public class GeneralListeners implements Listener {
                 double y = plugin.getConfig().getDouble("spawns." + spawn + ".Y");
                 double z = plugin.getConfig().getDouble("spawns." + spawn + ".Z");
 
-                Location location = new Location(world, x, y ,z);
+                Location location = new Location(world, x, y, z);
 
-                getScheduler().runTaskLater(plugin, ()->{
+                getScheduler().runTaskLater(plugin, () -> {
                     pl.teleport(location);
                     plugin.giveKit(plugin.getKit("default"), player);
                 }, 20L);
 
             }
-            
+
             try (Connection connection = plugin.getConnection();
                  PreparedStatement statement = connection.prepareStatement("update ffa_stats set username = ? where unique_id = ?")) {
                 statement.setString(1, player.getBukkitPlayer().getName());
@@ -111,6 +111,9 @@ public class GeneralListeners implements Listener {
                 e.printStackTrace();
             }
         });
+
+        PlayerManager.getPlayers().values().stream().filter(FFAPlayer::isSpectating)
+                .forEach(online -> pl.hidePlayer(online.getBukkitPlayer()));
 
         if (plugin.getChat() != null) {
             String group = plugin.getChat().getPrimaryGroup(pl);
@@ -142,24 +145,22 @@ public class GeneralListeners implements Listener {
 
             Player klr = killer.getBukkitPlayer();
 
-            int gained = player.getPoints() < 100 ? 5 :
-                    (int) Math.round(player.getPoints() * 0.5);
+            int gained = player.getPoints() <= 100 ? 10 :
+                    (int) Math.round(player.getPoints() * 0.05) * 2;
 
-            int lost = player.getPoints() <= 5 ? player.getPoints() : gained;
-
-            if (player.getKillStreak()>5) {
+            if (player.getKillStreak() > 5) {
                 Message.get("kill_streak_ended")
                         .replace("%player%", player.getBukkitPlayer().getName())
                         .replace("%streak%", player.getKillStreak())
                         .sendTo(Bukkit.getOnlinePlayers());
             }
 
-            player.setPoints(player.getPoints() - lost * 2);
+            player.setPoints(player.getPoints() - gained);
             player.setDeaths(player.getDeaths() + 1);
             player.setKillStreak(0);
             player.setTagger(null);
 
-            killer.setPoints(killer.getPoints() + gained * 2);
+            killer.setPoints(killer.getPoints() + gained);
             killer.setKills(killer.getKills() + 1);
             killer.setKillStreak(killer.getKillStreak() + 1);
             killer.setTagger(null);
@@ -168,44 +169,36 @@ public class GeneralListeners implements Listener {
             if (killer.getKillStreak() > killer.getHighestKillStreak())
                 killer.setHighestKillStreak(killer.getKillStreak());
 
-            if (klr != null) {
-                klr.setLevel(killer.getKillStreak());
+            klr.setLevel(killer.getKillStreak());
 
-                klr.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 60, 4));
+            klr.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 60, 4));
 
-                if (!(klr.getInventory().contains(Material.FLINT_AND_STEEL))) klr.getInventory()
-                        .addItem(new ItemStack(Material.FLINT_AND_STEEL));
+            if (!(klr.getInventory().contains(Material.FLINT_AND_STEEL))) klr.getInventory()
+                    .addItem(new ItemStack(Material.FLINT_AND_STEEL));
 
 
-                klr.getInventory().addItem(new ItemStack(Material.ARROW));
+            klr.getInventory().addItem(new ItemStack(Material.ARROW));
 
-                klr.getScoreboard().getObjective(DisplaySlot.BELOW_NAME)
-                        .getScore(klr)
-                        .setScore(killer.getKillStreak());
+            klr.getScoreboard().getObjective(DisplaySlot.BELOW_NAME)
+                    .getScore(klr)
+                    .setScore(killer.getKillStreak());
 
-                Util.spawnFirework(klr.getLocation());
+            Util.spawnFirework(klr.getLocation());
 
-                Message.get("killed_message")
-                        .replace("%health%", Util.format(killer.getBukkitPlayer().getHealth() / 2, 1))
-                        .replace("%maxHealth%", Util.format(killer.getBukkitPlayer().getMaxHealth() / 2, 1))
-                        .replace("%killed%", pl.getName())
-                        .replace("%gained%", gained)
-                        .replace("%total%", killer.getPoints())
-                        .sendTo(klr);
-            }
+            Message.get("killed_message")
+                    .replace("%health%", Util.format(killer.getBukkitPlayer().getHealth() / 2, 1))
+                    .replace("%maxHealth%", Util.format(killer.getBukkitPlayer().getMaxHealth() / 2, 1))
+                    .replace("%killed%", pl.getName())
+                    .replace("%gained%", gained)
+                    .replace("%total%", killer.getPoints())
+                    .sendTo(klr);
 
-            getScheduler().runTaskAsynchronously(plugin, ()-> {
+            getScheduler().runTaskAsynchronously(plugin, () -> {
                 player.update();
                 if (!(killer.update())) Message.get("failed_to_update_stats").sendTo(killer.getBukkitPlayer());
             });
 
         }
-
-        player.setTagger(null);
-        player.setLastKilled(null);
-        player.setKillStreak(0);
-
-        PlayerManager.getPlayers().remove(pl.getUniqueId());
 
         pl.getScoreboard().getObjective(DisplaySlot.BELOW_NAME).getScore(pl).setScore(0);
 
@@ -215,6 +208,12 @@ public class GeneralListeners implements Listener {
                 plugin.getScoreboard().getTeam(group).removePlayer(pl);
             }
         }
+
+        if (player.isSpectating()) {
+            Bukkit.getOnlinePlayers().forEach(online -> online.showPlayer(player.getBukkitPlayer()));
+        }
+
+        PlayerManager.getPlayers().remove(pl.getUniqueId());
 
     }
 
@@ -229,38 +228,60 @@ public class GeneralListeners implements Listener {
     }
 
     @EventHandler
-    public void onDamage(EntityDamageByEntityEvent event) {
-        if (event.getEntity() instanceof Player && event.getDamager() instanceof Player) {
+    public void onDamage(EntityDamageEvent e) {
 
-            if (((Player)event.getEntity()).getGameMode() == GameMode.CREATIVE) {
-                event.setCancelled(true);
+        if (e.getEntity() instanceof Player) {
+
+            FFAPlayer player = PlayerManager.getPlayer(((Player)e.getEntity()));
+
+            if (player.isSpectating()) {
+                e.setCancelled(true);
                 return;
             }
 
-            getScheduler().runTaskAsynchronously(plugin, () -> PlayerManager.getPlayer((Player) event.getEntity()).setTagger(event.getDamager().getUniqueId()));
+            if (e instanceof EntityDamageByEntityEvent) {
 
-            for (ItemStack item : ((Player) event.getEntity()).getInventory()) {
-                if (item != null) item.setDurability((short)0);
+                EntityDamageByEntityEvent event = (EntityDamageByEntityEvent) e;
+
+                if (event.getDamager() instanceof Player) {
+
+                    if (((Player) event.getDamager()).getGameMode() == GameMode.CREATIVE) {
+                        event.setCancelled(true);
+                        return;
+                    }
+
+                    if (PlayerManager.getPlayer((Player) event.getDamager()).isSpectating()) {
+                        event.setCancelled(true);
+                        return;
+                    }
+
+                    if (player.getBukkitPlayer().getHealth() > 0) player.setTagger(event.getDamager().getUniqueId());
+
+
+                    for (ItemStack item : ((Player) event.getEntity()).getInventory()) {
+                        if (item != null) item.setDurability((short) 0);
+                    }
+
+                }
+
             }
 
         }
+
 
     }
 
     @EventHandler
     public void onEnchant(EnchantItemEvent event) {
         event.setCancelled(true);
-        event.setExpLevelCost(0);
     }
 
     @EventHandler
     public void onShoot(EntityShootBowEvent event) {
         if (event.getEntity() instanceof Player) {
             Player player = (Player) event.getEntity();
-
-            player.getItemInHand().setDurability((short)0);
+            player.getItemInHand().setDurability((short) 0);
             player.updateInventory();
-
         }
     }
 
@@ -320,7 +341,7 @@ public class GeneralListeners implements Listener {
             double y = config.getDouble("spawns." + spawn + ".Y");
             double z = config.getDouble("spawns." + spawn + ".Z");
 
-            Location respawnLocation = new Location(world, x, y ,z);
+            Location respawnLocation = new Location(world, x, y, z);
 
             event.setRespawnLocation(respawnLocation);
         }

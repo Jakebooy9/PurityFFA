@@ -40,12 +40,16 @@ public class ResetStatsCommand implements CommandExecutor {
                 Message.get("correct_usage").replace("%command%", command.getName()).replace("%usage%", "<player>").sendTo(sender);
                 return false;
             }
-            UUID uuid = Bukkit.getOfflinePlayer(args[0]).getUniqueId();
 
             Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
-                FFAPlayer player = PlayerManager.getPlayer(uuid);
+                FFAPlayer player = PlayerManager.getPlayer(args[0]);
 
-                player.setPoints(plugin.getConfig().getInt("ffa.starting_points"));
+                if (player == null) {
+                    Message.get("player_not_found").replace("%player%", args[0]).sendTo(sender);
+                    return;
+                }
+
+                player.setPoints(100);
                 player.setInventoryContents(null);
                 player.setKills(0);
                 player.setDeaths(0);

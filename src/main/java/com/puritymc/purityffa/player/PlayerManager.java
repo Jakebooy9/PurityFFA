@@ -2,6 +2,7 @@ package com.puritymc.purityffa.player;
 
 import com.puritymc.purityffa.PurityFFA;
 import org.bukkit.Bukkit;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 
 import java.io.IOException;
@@ -34,91 +35,156 @@ public class PlayerManager {
         return getPlayer(pl.getUniqueId());
     }
 
+    public static FFAPlayer getPlayer(String name) {
+
+        OfflinePlayer op = Bukkit.getOfflinePlayer(name);
+        FFAPlayer player = null;
+
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet set = null;
+
+        try {
+            connection = plugin.getConnection();
+
+            String query = "SELECT * FROM ffa_stats WHERE unique_id = ?;";
+
+            statement = connection.prepareStatement(query);
+            statement.setString(1, op.getUniqueId().toString());
+
+            set = statement.executeQuery();
+
+            boolean found = false;
+
+            while (set.next()) {
+                if (found) {
+                    throw new SQLException("Found multiple results for '" + op.getUniqueId() + "'.");
+                }
+
+                player = new FFAPlayer(Bukkit.getOfflinePlayer(name));
+
+                found = true;
+
+                player.setId(set.getInt("player_id"));
+                player.setPoints(set.getInt("points"));
+                player.setKills(set.getInt("kills"));
+                player.setDeaths(set.getInt("deaths"));
+                player.setHighestKillStreak(set.getInt("highestKillStreak"));
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (set != null) {
+                try {
+                    set.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return player;
+    }
+
     public static FFAPlayer getPlayer(UUID uuid) {
+        if (uuid == null) return null;
+
         if (players.get(uuid) != null) {
             return players.get(uuid);
         }
 
         FFAPlayer player = new FFAPlayer(Bukkit.getPlayer(uuid));
 
-        Bukkit.getScheduler().runTaskAsynchronously(plugin, ()-> {
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet set = null;
 
-            Connection connection = null;
-            PreparedStatement statement = null;
-            ResultSet set = null;
+        try {
+            connection = plugin.getConnection();
 
-            try {
-                connection = plugin.getConnection();
+            String query = "SELECT * FROM ffa_stats WHERE unique_id = ?;";
 
-                String query = "SELECT * FROM ffa_stats WHERE unique_id = ?;";
+            statement = connection.prepareStatement(query);
+            statement.setString(1, uuid.toString());
+
+            set = statement.executeQuery();
+
+            boolean found = false;
+
+            while (set.next()) {
+                if (found) {
+                    throw new SQLException("Found multiple results for '" + uuid + "'.");
+                }
+
+                found = true;
+
+                player.setId(set.getInt("player_id"));
+                player.setPoints(set.getInt("points"));
+                player.setKills(set.getInt("kills"));
+                player.setDeaths(set.getInt("deaths"));
+
+                if (set.getString("inventoryContents") != null) {
+                    try {
+                        player.setInventoryContents(fromBase64(set.getString("inventoryContents")).getContents());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+            }
+
+            if (!(found)) {
+                query = "INSERT INTO ffa_stats (unique_id, username) VALUES (?, ?);";
 
                 statement = connection.prepareStatement(query);
+
                 statement.setString(1, uuid.toString());
+                statement.setString(2, player.getBukkitPlayer().getName());
 
-                set = statement.executeQuery();
+                statement.executeUpdate();
+            }
 
-                boolean found = false;
-
-                while (set.next()) {
-                    if (found) {
-                        throw new SQLException("Found multiple results for " + uuid + ".");
-                    }
-
-                    found = true;
-
-                    player.setId(set.getInt("player_id"));
-                    player.setPoints(set.getInt("points"));
-                    player.setKills(set.getInt("kills"));
-                    player.setDeaths(set.getInt("deaths"));
-
-                    if (player.getBukkitPlayer().hasPermission("ffa.saveinventory") &&
-                            set.getString("inventoryContents") != null) {
-                        try {
-                            player.setInventoryContents(fromBase64(set.getString("inventoryContents")).getContents());
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-
-                }
-
-                if (!(found)) {
-                    query = "INSERT INTO ffa_stats (unique_id, username) VALUES (?, ?);";
-
-                    statement = connection.prepareStatement(query);
-
-                    statement.setString(1, uuid.toString());
-                    statement.setString(2, player.getBukkitPlayer().getName());
-
-                    statement.executeUpdate();
-                }
-
-            } catch (SQLException e) {
-                e.printStackTrace();
-            } finally {
-                if (set != null) {
-                    try {
-                        set.close();
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
-                }
-                if (statement != null) {
-                    try {
-                        statement.close();
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
-                }
-                if (connection != null) {
-                    try {
-                        connection.close();
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (set != null) {
+                try {
+                    set.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
                 }
             }
-        });
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
 
         players.put(uuid, player);
 

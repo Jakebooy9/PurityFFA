@@ -42,10 +42,6 @@ public class SaveInventoryCommand implements CommandExecutor {
                 Message.get("no_console_access").sendTo(sender);
                 return true;
             }
-            if (!(sender.hasPermission("ffa.saveinventory"))) {
-                Message.get("insufficient_permissions").sendTo(sender);
-                return true;
-            }
 
             Player pl = (Player) sender;
             PlayerInventory inventory = pl.getInventory();
@@ -58,18 +54,6 @@ public class SaveInventoryCommand implements CommandExecutor {
                 return true;
             }
 
-            for (int i = 0; i < inventory.getSize(); i++) {
-                ItemStack item = inventory.getItem(i);
-                if (item == null) {
-                    continue;
-                }
-
-                if (item.getAmount() < kit.getSpecialItems().get(item.getType().toString())) {
-                    Message.get("kit_not_complete").sendTo(sender);
-                    return true;
-                }
-            }
-
             for (Map.Entry<String, Integer> e : kit.getSpecialItems().entrySet()) {
                 if (!inventory.contains(Material.getMaterial(e.getKey()), e.getValue())) {
                     Message.get("kit_not_complete").sendTo(sender);
@@ -78,10 +62,12 @@ public class SaveInventoryCommand implements CommandExecutor {
             }
 
             player.setInventoryContents(inventory.getContents());
+
             Message.get("inventory_saved").sendTo(sender);
 
-            Bukkit.getScheduler().runTaskAsynchronously(plugin, player::update);
-
+            if (player.getBukkitPlayer().hasPermission("ffa.keepinventory")) {
+                Bukkit.getScheduler().runTaskAsynchronously(plugin, player::update);
+            }
         }
         return false;
     }

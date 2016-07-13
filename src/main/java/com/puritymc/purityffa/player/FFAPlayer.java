@@ -4,6 +4,7 @@ package com.puritymc.purityffa.player;
 import com.puritymc.purityffa.PurityFFA;
 import com.puritymc.purityffa.kit.Kit;
 import com.puritymc.purityffa.util.Util;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
@@ -39,8 +40,10 @@ public class FFAPlayer {
 
     private Kit kit = null;
     private boolean debugging = false;
+    private boolean spectating;
     private PurityFFA plugin;
     private Player player;
+    private OfflinePlayer offlinePlayer;
     private ItemStack[] contents;
 
     public FFAPlayer(Player player) {
@@ -48,8 +51,18 @@ public class FFAPlayer {
         this.plugin = PurityFFA.getInstance();
     }
 
+    public FFAPlayer(OfflinePlayer offlinePlayer) {
+        this.offlinePlayer = offlinePlayer;
+        this.plugin = PurityFFA.getInstance();
+    }
+
+
     public Player getBukkitPlayer() {
         return player;
+    }
+
+    public OfflinePlayer getOfflinePlayer() {
+        return offlinePlayer;
     }
 
     public int getId(){
@@ -65,7 +78,7 @@ public class FFAPlayer {
     }
 
     public void setPoints(int points) {
-        this.points = points;
+        this.points = (points < 0 ? 0 : points);
     }
 
     public int getKills() {
@@ -120,10 +133,6 @@ public class FFAPlayer {
         this.kit = kit;
     }
 
-    public boolean isTagged() {
-        return tagger != null;
-    }
-
     public UUID getTagger() {
         return tagger;
     }
@@ -138,6 +147,14 @@ public class FFAPlayer {
 
     public void setDebugging(boolean debugging) {
         this.debugging = debugging;
+    }
+
+    public boolean isSpectating() {
+        return spectating;
+    }
+
+    public void setSpectating(boolean spectating) {
+        this.spectating = spectating;
     }
 
     public ItemStack[] getInventoryContents() {
@@ -157,13 +174,9 @@ public class FFAPlayer {
 
         StringBuilder query = new StringBuilder();
 
-        query.append("UPDATE ffa_stats SET points = ?, kills = ?, deaths = ?, highestKillStreak = ? ");
-
-        if (contents != null && contents.length > 0) {
-            query.append(", inventoryContents = '").append(toBase64(kit, contents)).append("' ");
-        }
-
-        query.append("WHERE unique_id = ?");
+        query.append("UPDATE ffa_stats SET points = ?, kills = ?, deaths = ?, highestKillStreak = ? ")
+                .append(", inventoryContents = '").append(contents == null ? null : toBase64(kit, contents)).append("' ")
+                .append("WHERE player_id = ?");
 
         try {
             connection = plugin.getConnection();
@@ -173,7 +186,7 @@ public class FFAPlayer {
             statement.setInt(2, kills);
             statement.setInt(3, deaths);
             statement.setInt(4, highestKillStreak);
-            statement.setString(5, player.getUniqueId().toString());
+            statement.setInt(5, id);
 
             statement.executeUpdate();
         } catch (SQLException e) {
@@ -199,17 +212,17 @@ public class FFAPlayer {
     }
 
     public double getKillDeath() {
-        return getDeaths() <= 1 ? getKills() : Util.format(getKills() / getDeaths(), 2);
+        return getDeaths() <= 1 ? getKills() : Util.format((double)getKills() / getDeaths(), 2);
     }
 
     public Integer getRanking() {
         int rank = -1;
 
         try (Connection connection = plugin.getConnection();
-             PreparedStatement stmt = connection.prepareStatement("SELECT *, FIND_IN_SET( `kills`, " +
-                     "(SELECT GROUP_CONCAT( `kills` ORDER BY `kills` DESC ) " +
-                     "FROM `ffa_stats` )) AS rank FROM ffa_stats " +
-                     "WHERE `unique_id`='" + player.getUniqueId() + "';");
+             PreparedStatement stmt = connection.prepareStatement("SELECT *, FIND_IN_SET(kills, " +
+                     "(SELECT GROUP_CONCAT(kills ORDER BY kills DESC ) " +
+                     "FROM ffa_stats)) AS rank FROM ffa_stats " +
+                     "WHERE player_id = '" + getId() + "';");
              ResultSet set = stmt.executeQuery()) {
             if (set.next()) rank = set.getInt("rank");
         } catch (SQLException e) {

@@ -39,19 +39,17 @@ public class LeaderboardCommand implements CommandExecutor {
                      PreparedStatement stmt = connection.prepareStatement("select * from `ffa_stats` order by `kills` desc limit 0, 10;");
                      ResultSet set = stmt.executeQuery()) {
 
-                    int i = 1;
-
+                    int i = 0;
                     while (set.next() && i <= 10) {
+                        ++i;
 
                         Message message = Message.get("leaderboard_format");
 
                         message.replace("%position%", i);
-                        message.replace("%player%", Bukkit.getOfflinePlayer(UUID.fromString(set.getString("unique_id"))).getName());
-                        message.replace("%kills%", Integer.toString(set.getInt("kills")));
+                        message.replace("%player%", Bukkit.getOfflinePlayer(set.getString("username")).getName());
+                        message.replace("%kills%", set.getInt("kills"));
 
                         message.sendTo(commandSender);
-
-                        i++;
                     }
 
                 } catch (SQLException e) {
